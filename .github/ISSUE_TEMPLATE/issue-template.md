@@ -1,6 +1,6 @@
 ---
-name: Feature Template
-about: 구현할 기능을 이슈에 등록한다.
+name: issue template
+about: 이슈를 등록한다.
 title: "✨ Feat - / 🐛 Fix - / ♻️ Refactor - "
 labels: ''
 assignees: ''
@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ## Issue Description
-> 구현 기능을 자세히 적어주세요.
+> 해당 이슈에 대한 설명
 
 ## check-lists
 
