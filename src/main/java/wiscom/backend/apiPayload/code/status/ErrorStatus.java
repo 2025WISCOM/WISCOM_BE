@@ -21,9 +21,8 @@ public enum ErrorStatus implements BaseErrorCode {
     // 예시 에러
     TEMP_ERROR(HttpStatus.BAD_REQUEST, "TEMP400", "temp 에러입니다."),
 
-
-
-    ;
+    // page 관련 에러
+    PAGE_EXCEPTION(HttpStatus.BAD_REQUEST, "PAGE4001","페이지 번호 1은 0으로 리턴해야 합니다.");
 
     private final HttpStatus httpStatus;
     private final String code;
