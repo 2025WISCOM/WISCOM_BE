@@ -1,4 +1,4 @@
-package wiscom.backend.service;
+package wiscom.backend.service.Guestbook;
 
 import wiscom.backend.domain.Guestbook;
 import wiscom.backend.web.dto.GuestbookRequestDTO;

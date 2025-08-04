@@ -1,4 +1,4 @@
-package wiscom.backend.service;
+package wiscom.backend.service.Guestbook;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
