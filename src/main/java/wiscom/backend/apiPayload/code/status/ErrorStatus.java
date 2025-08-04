@@ -22,7 +22,11 @@ public enum ErrorStatus implements BaseErrorCode {
     TEMP_ERROR(HttpStatus.BAD_REQUEST, "TEMP400", "temp 에러입니다."),
 
     // page 관련 에러
-    PAGE_EXCEPTION(HttpStatus.BAD_REQUEST, "PAGE4001","페이지 번호 1은 0으로 리턴해야 합니다.");
+    PAGE_EXCEPTION(HttpStatus.BAD_REQUEST, "PAGE4001","페이지 번호 1은 0으로 리턴해야 합니다."),
+
+    // Guestbook 관련 에러
+    AUTHOR_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4001", "작성자는 필수 항목입니다."),
+    RECIPIENT_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4002", "받는자는 필수 항목입니다.");
 
     private final HttpStatus httpStatus;
     private final String code;
