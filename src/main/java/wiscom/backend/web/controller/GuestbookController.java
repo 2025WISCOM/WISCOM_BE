@@ -8,7 +8,7 @@ import wiscom.backend.apiPayload.ApiResponse;
 import wiscom.backend.converter.GuestbookConverter;
 import wiscom.backend.domain.Guestbook;
 import wiscom.backend.service.Guestbook.GuestbookQueryService;
-import wiscom.backend.service.Guestbook.GuestbookService;
+import wiscom.backend.service.Guestbook.GuestbookCommandService;
 import wiscom.backend.validation.annotation.PageCheck;
 import wiscom.backend.web.dto.GuestbookRequestDTO;
 import wiscom.backend.web.dto.GuestbookResponseDTO;
@@ -18,7 +18,7 @@ import wiscom.backend.web.dto.GuestbookResponseDTO;
 @Tag(name = "방명록 API", description = "방명록 관련 API 입니다.")
 public class GuestbookController {
 
-    private final GuestbookService guestbookService;
+    private final GuestbookCommandService guestbookCommandService;
     private final GuestbookQueryService guestbookQueryService;
 
     // 방명록 작성
@@ -28,7 +28,7 @@ public class GuestbookController {
             @RequestBody GuestbookRequestDTO.GuestbookDTO request
     ) {
 
-        return ApiResponse.onSuccess(guestbookService.createGuestbook(request));
+        return ApiResponse.onSuccess(guestbookCommandService.createGuestbook(request));
     }
 
     // 방명록 조회

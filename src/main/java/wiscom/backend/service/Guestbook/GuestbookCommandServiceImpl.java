@@ -11,7 +11,7 @@ import wiscom.backend.web.dto.GuestbookRequestDTO;
 
 @Service
 @RequiredArgsConstructor
-public class GuestbookServiceImpl implements GuestbookService {
+public class GuestbookCommandServiceImpl implements GuestbookCommandService {
 
     private final GuestbookRepository guestbookRepository;
 
