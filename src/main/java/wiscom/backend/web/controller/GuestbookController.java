@@ -40,4 +40,15 @@ public class GuestbookController {
 
         return ApiResponse.onSuccess(GuestbookConverter.getGuestbookListDTO(guestbookQueryService.getGuestbooks(page)));
     }
+
+    // 방명록 검색
+    @GetMapping("/api/guestbook/search")
+    @Operation(summary = "방명록 검색 API", description = "방명록 검색 기능입니다.")
+    public ApiResponse<GuestbookResponseDTO.getGuestbookListDTO> getSearchGuestbookList (
+            @RequestParam("keyword") String keyword,
+            @PageCheck @RequestParam(name = "page") Integer page
+    ) {
+
+        return ApiResponse.onSuccess(GuestbookConverter.getGuestbookListDTO(guestbookQueryService.getSearchGuestbooks(keyword, page)));
+    }
 }
