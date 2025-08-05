@@ -26,7 +26,8 @@ public enum ErrorStatus implements BaseErrorCode {
 
     // Guestbook 관련 에러
     AUTHOR_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4001", "작성자는 필수 항목입니다."),
-    RECIPIENT_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4002", "받는자는 필수 항목입니다.");
+    RECIPIENT_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4002", "받는자는 필수 항목입니다."),
+    KEYWORD_REQUIRED(HttpStatus.BAD_REQUEST, "GUESTBOOK4003", "키워드는 필수 항목입니다.");
 
     private final HttpStatus httpStatus;
     private final String code;
