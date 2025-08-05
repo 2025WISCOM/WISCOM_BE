@@ -16,7 +16,7 @@ import java.util.List;
 @RestController
 @Slf4j
 @RequiredArgsConstructor
-@Tag(name="Works API", description = "작품 조회 API입니다.")
+@Tag(name="작품 조회 API", description = "작품 조회 관련 API입니다.")
 public class WorkController {
 
     private final WorkService workService;
