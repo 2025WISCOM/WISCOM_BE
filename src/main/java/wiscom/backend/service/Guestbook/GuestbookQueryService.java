@@ -6,4 +6,6 @@ import wiscom.backend.domain.Guestbook;
 public interface GuestbookQueryService {
 
     Page<Guestbook> getGuestbooks(Integer page);
+
+    Page<Guestbook> getSearchGuestbooks(String keyword, Integer page);
 }
