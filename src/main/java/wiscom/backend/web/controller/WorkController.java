@@ -21,14 +21,14 @@ public class WorkController {
 
     private final WorkService workService;
 
-    @GetMapping("/api/workList/{category}")
-    public ApiResponse<List<WorkResponseDTO>>  getWorksListByCategory(@PathVariable("category") String category){
+    @GetMapping("/api/workList")
+    public ApiResponse<List<WorkResponseDTO>>  getWorksListByCategory(@RequestParam("category") String category){
         List<WorkResponseDTO> works = workService.getWorksByOptionalCategory(category);
         return ApiResponse.onSuccess(works);
     }
 
-    @GetMapping("/api/workDetail/{category}/{id}")
-    public ApiResponse<WorkDetailResponseDTO> getWorkDetail(@PathVariable("category") String category, @PathVariable("id") Long id){
+    @GetMapping("/api/workDetail")
+    public ApiResponse<WorkDetailResponseDTO> getWorkDetail(@RequestParam("category") String category, @RequestParam("id") Long id){
         WorkDetailResponseDTO work = workService.getWorkDetail(category, id);
         return ApiResponse.onSuccess(work);
     }
