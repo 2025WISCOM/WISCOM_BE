@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import wiscom.backend.apiPayload.code.status.ErrorStatus;
 import wiscom.backend.apiPayload.exception.handler.WorkHandler;
+import wiscom.backend.converter.WorkConverter;
 import wiscom.backend.domain.CategoryEnum;
 import wiscom.backend.domain.Work;
 import wiscom.backend.repository.WorkRepository;
@@ -29,7 +30,7 @@ public class WorkServiceImpl implements WorkService {
                 .orElseGet(workRepository::findAll);
 
         return works.stream()
-                .map(WorkResponseDTO::new)
+                .map(WorkConverter::toWorkResponseDTO)
                 .collect(Collectors.toList());
     }
 
@@ -50,7 +51,7 @@ public class WorkServiceImpl implements WorkService {
                     .map(Work::getId)
                     .orElseGet(() -> workRepository.findTopByOrderByIdAsc().get().getId());
 
-            return new WorkDetailResponseDTO(work, prev, next);
+            return WorkConverter.toWorkDetailResponseDTO(work, prev, next);
         }
 
         // 특정 카테고리일 경우
@@ -67,7 +68,7 @@ public class WorkServiceImpl implements WorkService {
                 .map(Work::getId)
                 .orElseGet(() -> workRepository.findTopByCategoriesContainingOrderByIdAsc(category).get().getId());
 
-        return new WorkDetailResponseDTO(work, prev, next);
+        return WorkConverter.toWorkDetailResponseDTO(work, prev, next);
 
     }
 
