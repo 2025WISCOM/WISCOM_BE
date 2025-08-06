@@ -13,7 +13,6 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
 public class Work extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +21,7 @@ public class Work extends BaseEntity {
     private String projectName;
     private String teamName;
     private  String shortDescription;
+    private String midDescription;
     private String githubUrl;
     private String instagramUrl;
 
