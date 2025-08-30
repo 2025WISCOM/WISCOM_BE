@@ -4,8 +4,6 @@ import lombok.Builder;
 import lombok.Getter;
 import wiscom.backend.domain.Developer;
 import wiscom.backend.domain.Image;
-import wiscom.backend.domain.Work;
-
 import java.util.List;
 
 @Builder

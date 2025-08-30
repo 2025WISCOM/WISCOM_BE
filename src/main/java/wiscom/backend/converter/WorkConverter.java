@@ -11,6 +11,7 @@ public class WorkConverter {
                 .id(work.getId())
                 .projectName(work.getProjectName())
                 .teamName(work.getTeamName())
+                .developers(work.getDevelopers())
                 .shortDescription(work.getShortDescription())
                 .imageUrl(work.getImageUrls().get(0).getUrl())
                 .midDescription(work.getMidDescription())
