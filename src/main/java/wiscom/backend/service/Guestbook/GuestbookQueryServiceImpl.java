@@ -3,6 +3,7 @@ package wiscom.backend.service.Guestbook;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import wiscom.backend.apiPayload.code.status.ErrorStatus;
 import wiscom.backend.apiPayload.exception.handler.GuestbookHandler;
@@ -19,7 +20,9 @@ public class GuestbookQueryServiceImpl implements GuestbookQueryService {
     @Override
     public Page<Guestbook> getGuestbooks(Integer page) {
 
-        return guestbookRepository.findAll(PageRequest.of(page, 6));
+        return guestbookRepository.findAll(
+                PageRequest.of(page, 6, Sort.by(Sort.Direction.DESC, "createdAt"))
+        );
     }
 
     @Override
@@ -30,6 +33,9 @@ public class GuestbookQueryServiceImpl implements GuestbookQueryService {
             throw new GuestbookHandler(ErrorStatus.KEYWORD_REQUIRED);
         }
 
-        return guestbookRepository.searchGuestbookByKeyword(keyword, PageRequest.of(page, 6));
+        return guestbookRepository.searchGuestbookByKeyword(
+                keyword,
+                PageRequest.of(page, 6, Sort.by(Sort.Direction.DESC, "createdAt"))
+        );
     }
 }
