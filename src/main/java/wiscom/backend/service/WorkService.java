@@ -1,6 +1,8 @@
 package wiscom.backend.service;
 
 import wiscom.backend.domain.CategoryEnum;
+import wiscom.backend.web.dto.DeveloperResponseDTO;
+import wiscom.backend.web.dto.TeamResponseDTO;
 import wiscom.backend.web.dto.WorkDetailResponseDTO;
 import wiscom.backend.web.dto.WorkResponseDTO;
 
@@ -11,4 +13,6 @@ public interface WorkService {
     public List<WorkResponseDTO> getWorksByOptionalCategory(String categoryString);
 
     public WorkDetailResponseDTO getWorkDetail(String categoryString, Long id);
+
+    public List<TeamResponseDTO> getDevelopers();
 }

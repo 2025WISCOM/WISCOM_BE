@@ -40,4 +40,8 @@ public interface WorkRepository extends JpaRepository<Work, Long> {
 
     // 카테고리별 가장 마지막
     Optional<Work> findTopByCategoriesContainingOrderByIdDesc(CategoryEnum category);
+
+    // 팀 목록
+    @Query("select distinct w from Work w left join fetch w.developers d")
+    List<Work> findAllWithDevelopers();
 }
