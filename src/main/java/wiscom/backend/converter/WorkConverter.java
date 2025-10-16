@@ -13,7 +13,7 @@ public class WorkConverter {
                 .teamName(work.getTeamName())
                 .developers(work.getDevelopers())
                 .shortDescription(work.getShortDescription())
-                .imageUrl(work.getImageUrls().get(0).getUrl())
+                .imageUrl(work.getImageUrl())
                 .midDescription(work.getMidDescription())
                 .build();
     }
