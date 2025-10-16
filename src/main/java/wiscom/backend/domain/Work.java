@@ -24,6 +24,7 @@ public class Work extends BaseEntity {
     private String midDescription;
     private String githubUrl;
     private String instagramUrl;
+    private String imageUrl;
 
     @ElementCollection(fetch = FetchType.LAZY)
     @Enumerated(EnumType.STRING)
